@@ -10,3 +10,14 @@ export const ScreenContainer = styled.View`
   height: 100%;
   padding: ${({ theme }) => theme.metrics.px(24)}px;
 `;
+export const TopContainer = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: ${({ theme }) => theme.metrics.px(36)}px;
+`;
+export const TitleContainer = styled.View`
+  width: 60%;
+`;

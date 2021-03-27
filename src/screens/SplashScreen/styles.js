@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import { colors } from '../../styles/colors';
-
 export const SectionView = styled.View`
   display: flex;
   flex-direction: column;
