@@ -9,10 +9,10 @@ import {
 import { CardTitle, CardHightLightText, CardDescription } from '../../atoms';
 
 export const HouseCard = ({ imgSource, title, description, price }) => {
-  const formattedPrice = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
+  //const formattedPrice = new Intl.NumberFormat('en-US', {
+  // style: 'currency',
+  //  currency: 'USD',
+  //});
 
   return (
     <CardContainer>
@@ -23,9 +23,7 @@ export const HouseCard = ({ imgSource, title, description, price }) => {
           <CardDescription>{description}</CardDescription>
         </TextContainerLeft>
         <TextContainerRight>
-          <CardHightLightText>
-            {formattedPrice.format(price)}
-          </CardHightLightText>
+          <CardHightLightText>U$ {Number(price).toFixed(2)}</CardHightLightText>
         </TextContainerRight>
       </TextContainer>
     </CardContainer>

@@ -2,10 +2,11 @@ import React from 'react';
 import { HouseCard } from '../../molecules';
 import { HousesListContainer } from './styles';
 
-export const HousesList = ({ data, children }) => {
+export const HousesList = ({ data, children, loading }) => {
   return (
     <HousesListContainer
       data={data}
+      refreshing={loading}
       renderItem={({ item }) => (
         <HouseCard
           title={item.address.line}

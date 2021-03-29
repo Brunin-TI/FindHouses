@@ -3,18 +3,27 @@ import {
   ScreenContainer,
   TopContainer,
   TitleContainer,
-  ScreenScroll,
   ContentContainer,
+  Loader,
+  LoaderContainer,
 } from './styles';
-import { Title, IconButton, Input, HousesList } from '../../components';
+import {
+  Title,
+  IconButton,
+  Input,
+  HousesList,
+  DetailText,
+} from '../../components';
 import { getHousesCall } from '../../services/calls';
 
 export const HomeScreen = () => {
+  const [loading, setLoading] = useState(true);
   const [housesListData, setHousesListData] = useState([]);
 
   const callGetHouses = async () => {
     const result = await getHousesCall();
     setHousesListData(result.properties ? result.properties : []);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -32,6 +41,12 @@ export const HomeScreen = () => {
             <IconButton iconName="filter" />
           </TopContainer>
           <Input label="Localização" placeholder="Digite o endereço" />
+          {loading && (
+            <LoaderContainer>
+              <Loader size="large" color="white" />
+              <DetailText>Loading...</DetailText>
+            </LoaderContainer>
+          )}
         </ContentContainer>
       </HousesList>
     </ScreenContainer>
