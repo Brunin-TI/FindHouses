@@ -11,3 +11,14 @@ export const getHousesCall = async () => {
     return error;
   }
 };
+
+export const getHouseDetail = async property_id => {
+  try {
+    const result = await api.get(
+      `/properties/v2/detail?property_id=${property_id}`,
+    );
+    return result.data;
+  } catch (error) {
+    return error;
+  }
+};
