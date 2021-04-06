@@ -5,6 +5,6 @@ import { LoaderIndicator, LoaderContainer } from './styles';
 export const Loader = ({ text }) => (
   <LoaderContainer>
     <LoaderIndicator size="large" color="white" />
-    <DetailText>{text ? text : 'Loading...'}</DetailText>
+    <DetailText>{text ? text : 'Carregando...'}</DetailText>
   </LoaderContainer>
 );
